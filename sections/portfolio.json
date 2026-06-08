@@ -27,13 +27,38 @@
                    ],
     "items":  [
                   {
-                      "src":  "images/book/eventos-1.svg",
-                      "alt":  "eventos-1",
+                      "src":  "images/book/BOOK-001.jpg",
+                      "alt":  "BOOK-001",
                       "category":  "book"
                   },
                   {
-                      "src":  "images/book/eventos-2.svg",
-                      "alt":  "eventos-2",
+                      "src":  "images/book/BOOK-002.jpg",
+                      "alt":  "BOOK-002",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/book/BOOK-004.jpg",
+                      "alt":  "BOOK-004",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/book/BOOK-005.jpg",
+                      "alt":  "BOOK-005",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/book/BOOK-006.jpg",
+                      "alt":  "BOOK-006",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/book/BOOK-007.jpg",
+                      "alt":  "BOOK-007",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/book/FCU_4807.jpg",
+                      "alt":  "FCU_4807",
                       "category":  "book"
                   },
                   {
@@ -47,58 +72,88 @@
                       "category":  "byn"
                   },
                   {
-                      "src":  "images/byn/byn-1.svg",
-                      "alt":  "byn-1",
+                      "src":  "images/byn/FCU_4812.jpg",
+                      "alt":  "FCU_4812",
                       "category":  "byn"
                   },
                   {
-                      "src":  "images/byn/byn-2.svg",
-                      "alt":  "byn-2",
+                      "src":  "images/byn/FCU_5156.jpg",
+                      "alt":  "FCU_5156",
                       "category":  "byn"
                   },
                   {
-                      "src":  "images/byn/byn-3.svg",
-                      "alt":  "byn-3",
+                      "src":  "images/byn/FCU_5191-2.jpg",
+                      "alt":  "FCU_5191-2",
                       "category":  "byn"
                   },
                   {
-                      "src":  "images/naturaleza/naturaleza-1.svg",
-                      "alt":  "naturaleza-1",
-                      "category":  "naturaleza"
+                      "src":  "images/byn/FCU_5335.jpg",
+                      "alt":  "FCU_5335",
+                      "category":  "byn"
                   },
                   {
-                      "src":  "images/naturaleza/naturaleza-2.svg",
-                      "alt":  "naturaleza-2",
-                      "category":  "naturaleza"
-                  },
-                  {
-                      "src":  "images/paisajes/paisajes-1.svg",
-                      "alt":  "paisajes-1",
+                      "src":  "images/paisajes/_MG_2860.jpg",
+                      "alt":  "_MG_2860",
                       "category":  "paisajes"
                   },
                   {
-                      "src":  "images/paisajes/paisajes-2.svg",
-                      "alt":  "paisajes-2",
+                      "src":  "images/paisajes/FCU_4833.jpg",
+                      "alt":  "FCU_4833",
                       "category":  "paisajes"
                   },
                   {
-                      "src":  "images/retratos/retratos-1.svg",
-                      "alt":  "retratos-1",
+                      "src":  "images/paisajes/FCU_5189.jpg",
+                      "alt":  "FCU_5189",
+                      "category":  "paisajes"
+                  },
+                  {
+                      "src":  "images/paisajes/FCU_5224.jpg",
+                      "alt":  "FCU_5224",
+                      "category":  "paisajes"
+                  },
+                  {
+                      "src":  "images/paisajes/FCU_5355.jpg",
+                      "alt":  "FCU_5355",
+                      "category":  "paisajes"
+                  },
+                  {
+                      "src":  "images/retratos/FCU_5132.jpg",
+                      "alt":  "FCU_5132",
                       "category":  "retratos"
                   },
                   {
-                      "src":  "images/retratos/retratos-2.svg",
-                      "alt":  "retratos-2",
-                      "category":  "retratos"
-                  },
-                  {
-                      "src":  "images/urbano/urbano-1.svg",
-                      "alt":  "urbano-1",
+                      "src":  "images/urbano/DSC_1384.jpg",
+                      "alt":  "DSC_1384",
                       "category":  "urbano"
                   },
                   {
-                      "src":  "images/urbano/urbano-2.svg",
-                      "alt":  "urbano-2",
+                      "src":  "images/urbano/FCU_1724.jpg",
+                      "alt":  "FCU_1724",
+                      "category":  "urbano"
+                  },
+                  {
+                      "src":  "images/urbano/FCU_4352-Editar.jpg",
+                      "alt":  "FCU_4352-Editar",
+                      "category":  "urbano"
+                  },
+                  {
+                      "src":  "images/urbano/FCU_4654.jpg",
+                      "alt":  "FCU_4654",
+                      "category":  "urbano"
+                  },
+                  {
+                      "src":  "images/urbano/FCU_4669-2.jpg",
+                      "alt":  "FCU_4669-2",
+                      "category":  "urbano"
+                  },
+                  {
+                      "src":  "images/urbano/FCU_5069.jpg",
+                      "alt":  "FCU_5069",
+                      "category":  "urbano"
+                  },
+                  {
+                      "src":  "images/urbano/FCU_5546.jpg",
+                      "alt":  "FCU_5546",
                       "category":  "urbano"
                   }
               ]
