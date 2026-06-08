@@ -131,6 +131,71 @@ async function renderSection(name){
 
 }
 
+async function renderEdiciones(){
+  const container = document.getElementById('contenedor-ediciones');
+  if(!container) return;
+
+  const data = await loadJSON('sections/ediciones.json');
+  if(!Array.isArray(data)) return;
+
+  container.innerHTML = '';
+
+  data.forEach(item => {
+    const title = el('h3', {class:'edicion-title'}, item.titulo || 'Antes y Después');
+    const card = el('div', {class:'edicion-card'}, [
+      el('div', {class:'edicion-image-card'}, [
+        el('p', {class:'compare-label'}, 'Antes'),
+        el('img', {src: item.src_antes, alt: item.titulo ? `${item.titulo} antes` : 'Antes'})
+      ]),
+      el('div', {class:'edicion-image-card'}, [
+        el('p', {class:'compare-label'}, 'Después'),
+        el('img', {src: item.src_despues, alt: item.titulo ? `${item.titulo} después` : 'Después'})
+      ])
+    ]);
+
+    const wrapper = el('div', {class:'edicion-pair fade-in'}, [title, card]);
+    container.appendChild(wrapper);
+  });
+
+  observeFadeIns(container);
+}
+
+function enterProcesoCreativo(){
+  document.body.classList.add('page-proceso');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function exitProcesoCreativo(){
+  document.body.classList.remove('page-proceso');
+}
+
+function setupProcesoCreativoNavigation(){
+  const link = document.querySelector('a[href="#proceso-creativo"]');
+  if(link){
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      enterProcesoCreativo();
+      history.pushState(null, '', '#proceso-creativo');
+    });
+  }
+
+  const backButton = document.getElementById('proceso-back-button');
+  if(backButton){
+    backButton.addEventListener('click', () => {
+      exitProcesoCreativo();
+      history.pushState(null, '', '#portfolio');
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  window.addEventListener('popstate', () => {
+    if(location.hash === '#proceso-creativo') enterProcesoCreativo();
+    else exitProcesoCreativo();
+  });
+
+  if(location.hash === '#proceso-creativo') enterProcesoCreativo();
+}
+
 function initFilters(){
   const buttons = document.querySelectorAll('.categories button');
   const items = document.querySelectorAll('.gallery-item');
@@ -265,6 +330,8 @@ async function init(){
   // render all sections we have JSON for
   const sections = ['hero','about','portfolio','services','contact'];
   await Promise.all(sections.map(s => renderSection(s)));
+  await renderEdiciones();
+  setupProcesoCreativoNavigation();
   initParallax();
   initLightbox();
   observeFadeIns();

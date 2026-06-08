@@ -1,28 +1,105 @@
-{
-  "categories": [
-    { "slug": "retratos", "label": "Retratos" },
-    { "slug": "eventos", "label": "Eventos" },
-    { "slug": "urbano", "label": "Urbano" },
-    { "slug": "naturaleza", "label": "Naturaleza" },
-    { "slug": "paisajes", "label": "Paisajes" },
-    { "slug": "byn", "label": "Blanco y Negro" },
-    { "slug": "edicion", "label": "Proceso Creativo" }
-  ],
-  "items": [
-    { "src": "images/retratos/retratos-1.svg", "alt": "Retrato 1", "category": "retratos" },
-    { "src": "images/retratos/retratos-2.svg", "alt": "Retrato 2", "category": "retratos" },
-    { "src": "images/eventos/eventos-1.svg", "alt": "Evento 1", "category": "eventos" },
-    { "src": "images/eventos/eventos-2.svg", "alt": "Evento 2", "category": "eventos" },
-    { "src": "images/urbano/urbano-1.svg", "alt": "Urbano 1", "category": "urbano" },
-    { "src": "images/urbano/urbano-2.svg", "alt": "Urbano 2", "category": "urbano" },
-    { "src": "images/naturaleza/naturaleza-1.svg", "alt": "Naturaleza 1", "category": "naturaleza" },
-    { "src": "images/naturaleza/naturaleza-2.svg", "alt": "Naturaleza 2", "category": "naturaleza" },
-    { "src": "images/paisajes/paisajes-1.svg", "alt": "Paisaje 1", "category": "paisajes" },
-    { "src": "images/paisajes/paisajes-2.svg", "alt": "Paisaje 2", "category": "paisajes" },
-    { "src": "images/byn/byn-0.jpg", "alt": "Velero", "category": "byn" },
-    { "src": "images/byn/byn-1.JPG", "alt": "Pensamientos en una tarde de verano", "category": "byn" },
-    { "src": "images/byn/byn-2.JPG", "alt": "Blanco y Negro 2", "category": "byn" },
-    { "src": "AMI-DESPUES.jpg", "src_before": "AMI-ANTES.jpg", "alt": "Retoque de retrato", "category": "edicion" },
-    { "src": "images/edicion/despues-2.jpg", "src_before": "images/edicion/antes-2.jpg", "alt": "Retoque de paisaje", "category": "edicion" }
-  ]
+﻿{
+    "categories":  [
+                       {
+                           "slug":  "retratos",
+                           "label":  "Retratos"
+                       },
+                       {
+                           "slug":  "book",
+                           "label":  "Book"
+                       },
+                       {
+                           "slug":  "urbano",
+                           "label":  "Urbano"
+                       },
+                       {
+                           "slug":  "naturaleza",
+                           "label":  "Naturaleza"
+                       },
+                       {
+                           "slug":  "paisajes",
+                           "label":  "Paisajes"
+                       },
+                       {
+                           "slug":  "byn",
+                           "label":  "Blanco y Negro"
+                       }
+                   ],
+    "items":  [
+                  {
+                      "src":  "images/book/eventos-1.svg",
+                      "alt":  "eventos-1",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/book/eventos-2.svg",
+                      "alt":  "eventos-2",
+                      "category":  "book"
+                  },
+                  {
+                      "src":  "images/byn/byn-0.jpg",
+                      "alt":  "byn-0",
+                      "category":  "byn"
+                  },
+                  {
+                      "src":  "images/byn/byn-1.jpg",
+                      "alt":  "byn-1",
+                      "category":  "byn"
+                  },
+                  {
+                      "src":  "images/byn/byn-1.svg",
+                      "alt":  "byn-1",
+                      "category":  "byn"
+                  },
+                  {
+                      "src":  "images/byn/byn-2.svg",
+                      "alt":  "byn-2",
+                      "category":  "byn"
+                  },
+                  {
+                      "src":  "images/byn/byn-3.svg",
+                      "alt":  "byn-3",
+                      "category":  "byn"
+                  },
+                  {
+                      "src":  "images/naturaleza/naturaleza-1.svg",
+                      "alt":  "naturaleza-1",
+                      "category":  "naturaleza"
+                  },
+                  {
+                      "src":  "images/naturaleza/naturaleza-2.svg",
+                      "alt":  "naturaleza-2",
+                      "category":  "naturaleza"
+                  },
+                  {
+                      "src":  "images/paisajes/paisajes-1.svg",
+                      "alt":  "paisajes-1",
+                      "category":  "paisajes"
+                  },
+                  {
+                      "src":  "images/paisajes/paisajes-2.svg",
+                      "alt":  "paisajes-2",
+                      "category":  "paisajes"
+                  },
+                  {
+                      "src":  "images/retratos/retratos-1.svg",
+                      "alt":  "retratos-1",
+                      "category":  "retratos"
+                  },
+                  {
+                      "src":  "images/retratos/retratos-2.svg",
+                      "alt":  "retratos-2",
+                      "category":  "retratos"
+                  },
+                  {
+                      "src":  "images/urbano/urbano-1.svg",
+                      "alt":  "urbano-1",
+                      "category":  "urbano"
+                  },
+                  {
+                      "src":  "images/urbano/urbano-2.svg",
+                      "alt":  "urbano-2",
+                      "category":  "urbano"
+                  }
+              ]
 }
