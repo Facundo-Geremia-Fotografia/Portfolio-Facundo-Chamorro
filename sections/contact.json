@@ -1,3 +1,3 @@
 {
-  "html": "<div class=\"contact-links\">\n  <a href=\"https://instagram.com/Facundo.Geremia\" target=\"_blank\">Instagram: Facundo.Geremia</a>\n  <a href=\"mailto:Facundogeremiafotografia@gmail.com\">Email: Facundogeremiafotografia@gmail.com</a>\n  <p>Ubicación: CABA, Buenos Aires, Argentina</p>\n</div>"
+  "html": "<div class=\"contact-links\">\n  <div class=\"contact-details\">\n    <a href=\"https://instagram.com/Facundo.Geremia\" target=\"_blank\">Instagram: Facundo.Geremia</a>\n    <a href=\"mailto:Facundogeremiafotografia@gmail.com\">Email: Facundogeremiafotografia@gmail.com</a>\n    <p>Instagram Artístico: Facundofoto</p>\n    <p>Ubicación: CABA, Buenos Aires, Argentina</p>\n  </div>\n  <div class=\"contact-qr\">\n    <img src=\"images/QR%20DATA.png\" alt=\"Código QR de contactos\" class=\"qr-image\" />\n    <p>QR: Redirección a todos mis contactos</p>\n  </div>\n</div>"
 }

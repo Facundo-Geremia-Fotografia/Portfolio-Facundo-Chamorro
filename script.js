@@ -160,40 +160,93 @@ async function renderEdiciones(){
   observeFadeIns(container);
 }
 
-function enterProcesoCreativo(){
-  document.body.classList.add('page-proceso');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function renderEdicionesPage(){
+  const container = document.getElementById('galeria-ediciones');
+  if(!container) return;
+
+  const trabajos = [
+    { archivo: 'Plano completo.jpg', titulo: 'McLaren 720S - Color, Encuadre, Edicion fina', descripcion: 'Arrastra el control para revelar el antes y el después de la edición.' },
+    { archivo: 'MUS.jpg', titulo: 'Ford Mustang clásico - Color, Retoques finos.', descripcion: 'Muestra cómo la corrección de color y la textura mejoran cada detalle.' },
+    { archivo: 'MAC.jpg', titulo: 'McLaren 720S - Color, Encuadre, Edicion fina.', descripcion: 'Diseñado para que cada imagen mantenga proporción y ritmo visual.' }
+  ];
+
+  container.innerHTML = trabajos.map(trabajo => {
+    const antesPath = `images/Ediciones fotograficas/Antes/${encodeURIComponent(trabajo.archivo)}`;
+    const despuesPath = `images/Ediciones fotograficas/Despues/${encodeURIComponent(trabajo.archivo)}`;
+
+    return `
+      <article class="photo-editing-card">
+        <h3 class="titulo-edicion">${trabajo.titulo}</h3>
+        <div class="comparison-wrapper" data-comparison-wrapper>
+          <img class="comparison-image before" src="${antesPath}" alt="Antes de ${trabajo.titulo}">
+          <img class="comparison-image after" src="${despuesPath}" alt="Después de ${trabajo.titulo}">
+          <div class="comparison-overlay" data-comparison-overlay></div>
+          <div class="comparison-slider" data-comparison-slider>
+            <div class="slider-handle" data-slider-handle>
+              <span class="slider-icon">⇄</span>
+            </div>
+          </div>
+        </div>
+        <p class="comparison-copy">${trabajo.descripcion}</p>
+      </article>
+    `;
+  }).join('');
+
+  observeFadeIns(container);
 }
 
-function exitProcesoCreativo(){
-  document.body.classList.remove('page-proceso');
-}
+function initComparisonSlider(){
+  const wrappers = document.querySelectorAll('[data-comparison-wrapper]');
 
-function setupProcesoCreativoNavigation(){
-  const link = document.querySelector('a[href="#proceso-creativo"]');
-  if(link){
-    link.addEventListener('click', event => {
+  wrappers.forEach(wrapper => {
+    const afterImage = wrapper.querySelector('.comparison-image.after');
+    const overlay = wrapper.querySelector('[data-comparison-overlay]');
+    const sliderHandle = wrapper.querySelector('[data-slider-handle]');
+    const slider = wrapper.querySelector('[data-comparison-slider]');
+
+    if(!afterImage || !overlay || !sliderHandle || !slider) return;
+
+    let isDragging = false;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const update = clientX => {
+      const rect = wrapper.getBoundingClientRect();
+      const percent = clamp((clientX - rect.left) / rect.width, 0, 1);
+      const width = `${percent * 100}%`;
+      afterImage.style.width = width;
+      overlay.style.left = width;
+      slider.style.left = width;
+    };
+
+    const startDrag = event => {
+      isDragging = true;
       event.preventDefault();
-      enterProcesoCreativo();
-      history.pushState(null, '', '#proceso-creativo');
-    });
-  }
+    };
 
-  const backButton = document.getElementById('proceso-back-button');
-  if(backButton){
-    backButton.addEventListener('click', () => {
-      exitProcesoCreativo();
-      history.pushState(null, '', '#portfolio');
-      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
-    });
-  }
+    const stopDrag = () => {
+      isDragging = false;
+    };
 
-  window.addEventListener('popstate', () => {
-    if(location.hash === '#proceso-creativo') enterProcesoCreativo();
-    else exitProcesoCreativo();
+    const drag = event => {
+      if (!isDragging) return;
+      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+      update(clientX);
+    };
+
+    sliderHandle.addEventListener('mousedown', startDrag);
+    sliderHandle.addEventListener('touchstart', startDrag, {passive:false});
+    window.addEventListener('mousemove', drag);
+    window.addEventListener('touchmove', drag, {passive:false});
+    window.addEventListener('mouseup', stopDrag);
+    window.addEventListener('touchend', stopDrag);
+
+    wrapper.addEventListener('click', event => {
+      if (event.target === wrapper) update(event.clientX);
+    });
+
+    update(wrapper.getBoundingClientRect().left + wrapper.clientWidth / 2);
   });
-
-  if(location.hash === '#proceso-creativo') enterProcesoCreativo();
 }
 
 function initFilters(){
@@ -328,10 +381,11 @@ function openLightbox(src, alt){
 
 async function init(){
   // render all sections we have JSON for
-  const sections = ['hero','about','portfolio','services','contact'];
+  const sections = ['hero','about','portfolio','contact'];
   await Promise.all(sections.map(s => renderSection(s)));
   await renderEdiciones();
-  setupProcesoCreativoNavigation();
+  renderEdicionesPage();
+  initComparisonSlider();
   initParallax();
   initLightbox();
   observeFadeIns();
@@ -350,21 +404,22 @@ const editorSave = document.getElementById('editor-save');
 const editorCopy = document.getElementById('editor-copy');
 const editorRefresh = document.getElementById('editor-refresh');
 
-editorToggle.addEventListener('click', () => editorPanel.classList.toggle('hidden'));
-editorClose.addEventListener('click', () => editorPanel.classList.add('hidden'));
+if(editorToggle) editorToggle.addEventListener('click', () => editorPanel.classList.toggle('hidden'));
+if(editorClose) editorClose.addEventListener('click', () => editorPanel.classList.add('hidden'));
 
-document.querySelectorAll('.editor-tabs button').forEach(btn => {
+const editorTabs = document.querySelectorAll('.editor-tabs button');
+editorTabs.forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.editor-tabs button').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const tab = btn.dataset.tab;
     document.querySelectorAll('[data-editor]').forEach(sec => sec.classList.add('hidden'));
-    document.querySelector(`[data-editor="${tab}"]`).classList.remove('hidden');
+    document.querySelector(`[data-editor="${tab}"]`)?.classList.remove('hidden');
   });
 });
 
 async function loadEditorData(){
-  const sections = ['hero','about','portfolio','services','contact'];
+  const sections = ['hero','about','portfolio','contact'];
   const data = {};
   for(const s of sections){
     data[s] = await loadJSON(`sections/${s}.json`) || {};

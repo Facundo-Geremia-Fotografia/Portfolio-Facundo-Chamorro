@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -24,8 +25,7 @@
     <a href="#inicio">Inicio</a>
     <a href="#sobre">Sobre mí</a>
     <a href="#portfolio">Portfolio</a>
-    <a href="#proceso-creativo">Proceso Creativo</a>
-    <a href="#servicios">Servicios</a>
+    <a href="ediciones.html">Ediciones fotográficas</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
@@ -62,18 +62,6 @@
 
 </section>
 
-<section id="proceso-creativo" class="ediciones-section fade-in" data-section="ediciones">
-  <div class="section-title">
-    <p class="section-tag">Proceso Creativo</p>
-    <h2>Proceso Creativo: Antes y Después</h2>
-  </div>
-  <div class="editing-intro">
-    <p>Este espacio muestra mi trabajo de edición y postproducción con comparativas reales de antes y después, separado de la galería de fotos terminadas.</p>
-    <button id="proceso-back-button" class="btn btn-secondary">Volver al portfolio</button>
-  </div>
-  <div id="contenedor-ediciones" class="ediciones-grid"></div>
-</section>
-
 <div id="lightbox" class="lightbox hidden">
   <div class="lightbox-backdrop" data-lightbox-close></div>
   <div class="lightbox-content">
@@ -84,11 +72,6 @@
     <p class="lightbox-caption" data-lightbox-caption></p>
   </div>
 </div>
-
-<!-- SERVICIOS -->
-<section id="servicios" class="services" data-section="services">
-  <div class="service-grid" data-content></div>
-</section>
 
 <!-- CONTACTO -->
 <section id="contacto" class="contact fade-in" data-section="contact">
@@ -116,7 +99,6 @@
     <button data-tab="hero" class="active">Hero</button>
     <button data-tab="about">Sobre</button>
     <button data-tab="portfolio">Portfolio</button>
-    <button data-tab="services">Servicios</button>
     <button data-tab="contact">Contacto</button>
   </div>
 
@@ -145,11 +127,6 @@
       <label>Items (JSON array of {"src","alt","category"}):</label>
       <textarea id="portfolio-items" rows="8"></textarea>
       <small>Para añadir imagen local: sube el archivo manualmente a `images/` y pega la ruta aquí.</small>
-    </div>
-
-    <div data-editor="services" class="editor-section hidden">
-      <label>HTML Servicios:</label>
-      <textarea id="services-html" rows="6"></textarea>
     </div>
 
     <div data-editor="contact" class="editor-section hidden">
