@@ -39,6 +39,31 @@
     ],
     "items": [
         {
+            "src": "images/Fotografia Inmobiliaria/IMO 001.jpg",
+            "alt": "IMO 001",
+            "category": "fotografia-inmobiliaria"
+        },
+        {
+            "src": "images/Fotografia Inmobiliaria/IMO 002.jpg",
+            "alt": "IMO 002",
+            "category": "fotografia-inmobiliaria"
+        },
+        {
+            "src": "images/Produccto/MAC.jpg",
+            "alt": "MAC",
+            "category": "producto"
+        },
+        {
+            "src": "images/Produccto/MAC-PLANO COMPLETO.jpg",
+            "alt": "MAC-PLANO COMPLETO",
+            "category": "producto"
+        },
+        {
+            "src": "images/Produccto/MUS.jpg",
+            "alt": "MUS",
+            "category": "producto"
+        },
+        {
             "src": "images/book/FCU_4807.jpg",
             "alt": "FCU_4807",
             "category": "book"
@@ -112,21 +137,6 @@
             "src": "images/Deportes/DEPO-002.jpg",
             "alt": "DEPO-002",
             "category": "deportes"
-        },
-        {
-            "src": "images/Produccto/MAC.jpg",
-            "alt": "MAC",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/MAC-PLANO COMPLETO.jpg",
-            "alt": "MAC-PLANO COMPLETO",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/MUS.jpg",
-            "alt": "MUS",
-            "category": "producto"
         },
         {
             "src": "images/urbano/FCU_1724.jpg",
