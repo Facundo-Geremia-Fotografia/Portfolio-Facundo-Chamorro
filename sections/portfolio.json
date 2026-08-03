@@ -1,327 +1,217 @@
 ﻿{
-    "categories": [
-        {
-            "slug": "fotografia-inmobiliaria",
-            "label": "Fotografia Inmobiliaria"
-        },
-        {
-            "slug": "deportes",
-            "label": "Deportes"
-        },
-        {
-            "slug": "retratos",
-            "label": "Retratos"
-        },
-        {
-            "slug": "book",
-            "label": "Book"
-        },
-        {
-            "slug": "urbano",
-            "label": "Urbano"
-        },
-        {
-            "slug": "naturaleza",
-            "label": "Naturaleza"
-        },
-        {
-            "slug": "paisajes",
-            "label": "Paisajes"
-        },
-        {
-            "slug": "byn",
-            "label": "Blanco y Negro"
-        },
-        {
-            "slug": "producto",
-            "label": "Producto"
-        }
-    ],
-    "items": [
-        {
-            "src": "images/Fotografia Inmobiliaria/IMO 001.jpg",
-            "alt": "IMO 001",
-            "category": "fotografia-inmobiliaria"
-        },
-        {
-            "src": "images/Fotografia Inmobiliaria/IMO 002.jpg",
-            "alt": "IMO 002",
-            "category": "fotografia-inmobiliaria"
-        },
-        {
-            "src": "images/Produccto/001.jpg",
-            "alt": "Producto 001",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/002.jpg",
-            "alt": "Producto 002",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/003.jpg",
-            "alt": "Producto 003",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/004.jpg",
-            "alt": "Producto 004",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/005.jpg",
-            "alt": "Producto 005",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/006.jpg",
-            "alt": "Producto 006",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/007.jpg",
-            "alt": "Producto 007",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/008.jpg",
-            "alt": "Producto 008",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/009.jpg",
-            "alt": "Producto 009",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/010.jpg",
-            "alt": "Producto 010",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/011.jpg",
-            "alt": "Producto 011",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/012.jpg",
-            "alt": "Producto 012",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/013.png",
-            "alt": "Producto 013",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/014.jpg",
-            "alt": "Producto 014",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/015.jpg",
-            "alt": "Producto 015",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/016.jpg",
-            "alt": "Producto 016",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/017.jpg",
-            "alt": "Producto 017",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/018.jpg",
-            "alt": "Producto 018",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/019.jpg",
-            "alt": "Producto 019",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/020.jpg",
-            "alt": "Producto 020",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/021.jpg",
-            "alt": "Producto 021",
-            "category": "producto"
-        },
-        {
-            "src": "images/Produccto/022.jpg",
-            "alt": "Producto 022",
-            "category": "producto"
-        },
-        {
-            "src": "images/book/FCU_4807.jpg",
-            "alt": "FCU_4807",
-            "category": "book"
-        },
-        {
-            "src": "images/book/BOOK-001.jpg",
-            "alt": "BOOK-001",
-            "category": "book"
-        },
-        {
-            "src": "images/book/BOOK-002.jpg",
-            "alt": "BOOK-002",
-            "category": "book"
-        },
-        {
-            "src": "images/book/BOOK-004.jpg",
-            "alt": "BOOK-004",
-            "category": "book"
-        },
-        {
-            "src": "images/book/BOOK-005.jpg",
-            "alt": "BOOK-005",
-            "category": "book"
-        },
-        {
-            "src": "images/book/BOOK-006.jpg",
-            "alt": "BOOK-006",
-            "category": "book"
-        },
-        {
-            "src": "images/book/BOOK-007.jpg",
-            "alt": "BOOK-007",
-            "category": "book"
-        },
-        {
-            "src": "images/Deportes/BASE 001.jpg",
-            "alt": "BASE 001",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/BASE 002.jpg",
-            "alt": "BASE 002",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/BASE 003.jpg",
-            "alt": "BASE 003",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/DEPO-001 (1).JPG",
-            "alt": "DEPO-001 (1)",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/DEPO-001 (2).JPG",
-            "alt": "DEPO-001 (2)",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/DEPO-001 (3).JPG",
-            "alt": "DEPO-001 (3)",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/DEPO-001.jpg",
-            "alt": "DEPO-001",
-            "category": "deportes"
-        },
-        {
-            "src": "images/Deportes/DEPO-002.jpg",
-            "alt": "DEPO-002",
-            "category": "deportes"
-        },
-        {
-            "src": "images/urbano/FCU_1724.jpg",
-            "alt": "FCU_1724",
-            "category": "urbano"
-        },
-        {
-            "src": "images/urbano/DSC_1384.jpg",
-            "alt": "DSC_1384",
-            "category": "urbano"
-        },
-        {
-            "src": "images/urbano/FCU_4352-Editar.jpg",
-            "alt": "FCU_4352-Editar",
-            "category": "urbano"
-        },
-        {
-            "src": "images/urbano/FCU_4654.jpg",
-            "alt": "FCU_4654",
-            "category": "urbano"
-        },
-        {
-            "src": "images/urbano/FCU_4669-2.jpg",
-            "alt": "FCU_4669-2",
-            "category": "urbano"
-        },
-        {
-            "src": "images/urbano/FCU_5069.jpg",
-            "alt": "FCU_5069",
-            "category": "urbano"
-        },
-        {
-            "src": "images/urbano/FCU_5546.jpg",
-            "alt": "FCU_5546",
-            "category": "urbano"
-        },
-        {
-            "src": "images/byn/byn-0.jpg",
-            "alt": "byn-0",
-            "category": "byn"
-        },
-        {
-            "src": "images/byn/byn-1.jpg",
-            "alt": "byn-1",
-            "category": "byn"
-        },
-        {
-            "src": "images/byn/FCU_4812.jpg",
-            "alt": "FCU_4812",
-            "category": "byn"
-        },
-        {
-            "src": "images/byn/FCU_5156.jpg",
-            "alt": "FCU_5156",
-            "category": "byn"
-        },
-        {
-            "src": "images/byn/FCU_5191-2.jpg",
-            "alt": "FCU_5191-2",
-            "category": "byn"
-        },
-        {
-            "src": "images/byn/FCU_5335.jpg",
-            "alt": "FCU_5335",
-            "category": "byn"
-        },
-        {
-            "src": "images/paisajes/FCU_4833.jpg",
-            "alt": "FCU_4833",
-            "category": "paisajes"
-        },
-        {
-            "src": "images/paisajes/FCU_5189.jpg",
-            "alt": "FCU_5189",
-            "category": "paisajes"
-        },
-        {
-            "src": "images/paisajes/FCU_5224.jpg",
-            "alt": "FCU_5224",
-            "category": "paisajes"
-        },
-        {
-            "src": "images/paisajes/FCU_5355.jpg",
-            "alt": "FCU_5355",
-            "category": "paisajes"
-        },
-        {
-            "src": "images/retratos/FCU_5132.jpg",
-            "alt": "FCU_5132",
-            "category": "retratos"
-        }
-    ]
+    "categories":  [
+                       {
+                           "slug":  "inmobiliaria",
+                           "label":  "Fotografía Inmobiliaria"
+                       },
+                       {
+                           "slug":  "deportes",
+                           "label":  "Deportes"
+                       },
+                       {
+                           "slug":  "comercial",
+                           "label":  "Producto / Comercial"
+                       },
+                       {
+                           "slug":  "sesiones",
+                           "label":  "Sesiones Personalizadas"
+                       }
+                   ],
+    "items":  [
+                  {
+                      "src":  "images/Produccto-comercial/001.jpg",
+                      "alt":  "001",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/002.jpg",
+                      "alt":  "002",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/003.jpg",
+                      "alt":  "003",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/004.jpg",
+                      "alt":  "004",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/006.jpg",
+                      "alt":  "006",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/007.jpg",
+                      "alt":  "007",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/008.jpg",
+                      "alt":  "008",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/009.jpg",
+                      "alt":  "009",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/010.jpg",
+                      "alt":  "010",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/011.jpg",
+                      "alt":  "011",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/012.jpg",
+                      "alt":  "012",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/013.png",
+                      "alt":  "013",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/014.jpg",
+                      "alt":  "014",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/015.jpg",
+                      "alt":  "015",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/016.jpg",
+                      "alt":  "016",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/017.jpg",
+                      "alt":  "017",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/018.jpg",
+                      "alt":  "018",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/019.jpg",
+                      "alt":  "019",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/020.jpg",
+                      "alt":  "020",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/021.jpg",
+                      "alt":  "021",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/022.jpg",
+                      "alt":  "022",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/MAC.jpg",
+                      "alt":  "MAC",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Produccto-comercial/MAC-PLANO COMPLETO.jpg",
+                      "alt":  "MAC-PLANO COMPLETO",
+                      "category":  "comercial"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-001.jpg",
+                      "alt":  "DEPO-001",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-002.jpg",
+                      "alt":  "DEPO-002",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-003 (3).JPG",
+                      "alt":  "DEPO-003 (3)",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-004 (2).JPG",
+                      "alt":  "DEPO-004 (2)",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-005(1).JPG",
+                      "alt":  "DEPO-005(1)",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-006.jpg",
+                      "alt":  "DEPO-006",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-007.jpg",
+                      "alt":  "DEPO-007",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Deportes/DEPO-008.jpg",
+                      "alt":  "DEPO-008",
+                      "category":  "deportes"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO001.jpg",
+                      "alt":  "IMO001",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO002.jpg",
+                      "alt":  "IMO002",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/BOOK-001.jpg",
+                      "alt":  "BOOK-001",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/BOOK-002.jpg",
+                      "alt":  "BOOK-002",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/BOOK-004.jpg",
+                      "alt":  "BOOK-004",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/BOOK-005.jpg",
+                      "alt":  "BOOK-005",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/BOOK-006.jpg",
+                      "alt":  "BOOK-006",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/BOOK-007.jpg",
+                      "alt":  "BOOK-007",
+                      "category":  "sesiones"
+                  }
+              ]
 }

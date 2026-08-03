@@ -59,21 +59,20 @@ async function renderSection(name){
   const data = await loadJSON(`sections/${name}.json`);
   if(!data) return;
 
-  // Hero
-  if(name === 'hero'){
-    if(data.background) container.style.backgroundImage = `url('${data.background}')`;
-    const content = container.querySelector('[data-content]');
-    content.innerHTML = `
-      <p class="subtitle">${data.subtitle || ''}</p>
-      <h1>${data.title || ''}</h1>
-      ${data.cta ? `<a href="${data.cta.href || '#'}" class="btn">${data.cta.label}</a>` : ''}
-    `;
+  if(name === 'about'){
+    const target = container.querySelector('[data-content]');
+    if(!target) return;
+    target.innerHTML = data.html || '';
+    observeFadeIns(target);
     return;
   }
 
-  // About, Contact, Services (html content)
-  if(data.html){
+  if(!data) return;
+
+  // Contact, Services (html content)
+  if(data.html && name !== 'about'){
     const target = container.querySelector('[data-content]');
+    if(!target) return;
     target.innerHTML = data.html;
     observeFadeIns(target);
     return;
@@ -103,20 +102,23 @@ async function renderSection(name){
         'data-category-label': categoryLabel
       });
 
+      const imageSrc = item.src || '';
+      const normalizedSrc = imageSrc.startsWith('http') ? imageSrc : imageSrc.replace(/^\/+/,'');
+
       if(item.src_before){
         const compare = el('div', {class: 'comparative'}, [
           el('div', {class: 'compare-card'}, [
             el('p', {class: 'compare-label'}, 'Antes'),
-            el('img', {src: item.src_before, alt: item.alt ? `${item.alt} antes` : 'Antes'})
+            el('img', {src: item.src_before || '', alt: item.alt ? `${item.alt} antes` : 'Antes'})
           ]),
           el('div', {class: 'compare-card'}, [
             el('p', {class: 'compare-label'}, 'Después'),
-            el('img', {src: item.src, alt: item.alt ? `${item.alt} después` : 'Después'})
+            el('img', {src: normalizedSrc, alt: item.alt ? `${item.alt} después` : 'Después'})
           ])
         ]);
         div.appendChild(compare);
       } else {
-        const img = el('img', {src: item.src, alt: item.alt || ''});
+        const img = el('img', {src: normalizedSrc, alt: item.alt || ''});
         div.appendChild(img);
       }
 
@@ -142,14 +144,16 @@ async function renderEdiciones(){
 
   data.forEach(item => {
     const title = el('h3', {class:'edicion-title'}, item.titulo || 'Antes y Después');
+    const beforeSrc = item.src_antes || item.antes || item.before || '';
+    const afterSrc = item.src_despues || item.despues || item.after || '';
     const card = el('div', {class:'edicion-card'}, [
       el('div', {class:'edicion-image-card'}, [
         el('p', {class:'compare-label'}, 'Antes'),
-        el('img', {src: item.src_antes, alt: item.titulo ? `${item.titulo} antes` : 'Antes'})
+        el('img', {src: beforeSrc, alt: item.titulo ? `${item.titulo} antes` : 'Antes'})
       ]),
       el('div', {class:'edicion-image-card'}, [
         el('p', {class:'compare-label'}, 'Después'),
-        el('img', {src: item.src_despues, alt: item.titulo ? `${item.titulo} después` : 'Después'})
+        el('img', {src: afterSrc, alt: item.titulo ? `${item.titulo} después` : 'Después'})
       ])
     ]);
 
@@ -165,14 +169,29 @@ function renderEdicionesPage(){
   if(!container) return;
 
   const trabajos = [
-    { archivo: 'Plano completo.jpg', titulo: 'McLaren 720S - Color, Encuadre, Edicion fina', descripcion: 'Arrastra el control para revelar el antes y el después de la edición.' },
-    { archivo: 'MUS.jpg', titulo: 'Ford Mustang clásico - Color, Retoques finos.', descripcion: 'Muestra cómo la corrección de color y la textura mejoran cada detalle.' },
-    { archivo: 'MAC.jpg', titulo: 'McLaren 720S - Color, Encuadre, Edicion fina.', descripcion: 'Diseñado para que cada imagen mantenga proporción y ritmo visual.' }
+    {
+      antes: 'antes-01.jpg',
+      despues: 'despues-01.jpg',
+      titulo: 'McLaren 720S - Color, Encuadre, Edicion fina',
+      descripcion: 'Arrastra el control para revelar el antes y el después de la edición.'
+    },
+    {
+      antes: 'antes-02.jpg',
+      despues: 'despues-02.jpg',
+      titulo: 'Ford Mustang clásico - Color, Retoques finos.',
+      descripcion: 'Muestra cómo la corrección de color y la textura mejoran cada detalle.'
+    },
+    {
+      antes: 'antes-03.jpg',
+      despues: 'despues-03.jpg',
+      titulo: 'McLaren 720S - Color, Encuadre, Edicion fina.',
+      descripcion: 'Diseñado para que cada imagen mantenga proporción y ritmo visual.'
+    }
   ];
 
   container.innerHTML = trabajos.map(trabajo => {
-    const antesPath = `images/Ediciones fotograficas/Antes/${encodeURIComponent(trabajo.archivo)}`;
-    const despuesPath = `images/Ediciones fotograficas/Despues/${encodeURIComponent(trabajo.archivo)}`;
+    const antesPath = `images/Ediciones-fotograficas/Antes/edicion/${encodeURIComponent(trabajo.antes)}`;
+    const despuesPath = `images/Ediciones-fotograficas/Despues/${encodeURIComponent(trabajo.despues)}`;
 
     return `
       <article class="photo-editing-card">
@@ -381,7 +400,7 @@ function openLightbox(src, alt){
 
 async function init(){
   // render all sections we have JSON for
-  const sections = ['hero','about','portfolio','contact'];
+  const sections = ['about','portfolio','contact'];
   await Promise.all(sections.map(s => renderSection(s)));
   await renderEdiciones();
   renderEdicionesPage();
@@ -404,8 +423,8 @@ const editorSave = document.getElementById('editor-save');
 const editorCopy = document.getElementById('editor-copy');
 const editorRefresh = document.getElementById('editor-refresh');
 
-if(editorToggle) editorToggle.addEventListener('click', () => editorPanel.classList.toggle('hidden'));
-if(editorClose) editorClose.addEventListener('click', () => editorPanel.classList.add('hidden'));
+if(editorToggle && editorPanel) editorToggle.addEventListener('click', () => editorPanel.classList.toggle('hidden'));
+if(editorClose && editorPanel) editorClose.addEventListener('click', () => editorPanel.classList.add('hidden'));
 
 const editorTabs = document.querySelectorAll('.editor-tabs button');
 editorTabs.forEach(btn => {
@@ -452,11 +471,13 @@ async function loadEditorData(){
   }
 }
 
-editorLoad.addEventListener('click', async () => {
-  editorLoad.disabled = true;
-  await loadEditorData();
-  editorLoad.disabled = false;
-});
+if(editorLoad){
+  editorLoad.addEventListener('click', async () => {
+    editorLoad.disabled = true;
+    await loadEditorData();
+    editorLoad.disabled = false;
+  });
+}
 
 function downloadJSON(filename, obj){
   const txt = JSON.stringify(obj, null, 2);
@@ -468,10 +489,13 @@ function downloadJSON(filename, obj){
   URL.revokeObjectURL(url);
 }
 
-editorSave.addEventListener('click', () => {
-  // determine active tab
-  const active = document.querySelector('.editor-tabs button.active').dataset.tab;
-  if(active === 'hero'){
+if(editorSave){
+  editorSave.addEventListener('click', () => {
+    // determine active tab
+    const activeButton = document.querySelector('.editor-tabs button.active');
+    if(!activeButton) return;
+    const active = activeButton.dataset.tab;
+    if(active === 'hero'){
     const obj = {
       title: document.getElementById('hero-title').value,
       subtitle: document.getElementById('hero-subtitle').value,
@@ -487,29 +511,36 @@ editorSave.addEventListener('click', () => {
     let items = [];
     try{ cats = JSON.parse(document.getElementById('portfolio-cats').value); }catch(e){ alert('JSON inválido en categorías'); return; }
     try{ items = JSON.parse(document.getElementById('portfolio-items').value); }catch(e){ alert('JSON inválido en items'); return; }
-    const obj = { categories: cats, items: items };
-    downloadJSON('portfolio.json', obj);
-  } else if(active === 'services'){
-    const obj = { html: document.getElementById('services-html').value };
-    downloadJSON('services.json', obj);
-  } else if(active === 'contact'){
-    const obj = { html: document.getElementById('contact-html').value };
-    downloadJSON('contact.json', obj);
-  }
-});
+      const obj = { categories: cats, items: items };
+      downloadJSON('portfolio.json', obj);
+    } else if(active === 'services'){
+      const obj = { html: document.getElementById('services-html').value };
+      downloadJSON('services.json', obj);
+    } else if(active === 'contact'){
+      const obj = { html: document.getElementById('contact-html').value };
+      downloadJSON('contact.json', obj);
+    }
+  });
+}
 
-editorCopy.addEventListener('click', () => {
-  const active = document.querySelector('.editor-tabs button.active').dataset.tab;
-  let txt = '';
+if(editorCopy){
+  editorCopy.addEventListener('click', () => {
+    const activeButton = document.querySelector('.editor-tabs button.active');
+    if(!activeButton) return;
+    const active = activeButton.dataset.tab;
+    let txt = '';
   if(active === 'hero') txt = JSON.stringify({ title: document.getElementById('hero-title').value, subtitle: document.getElementById('hero-subtitle').value, background: document.getElementById('hero-background').value, cta:{label: document.getElementById('hero-cta-label').value, href: document.getElementById('hero-cta-href').value} }, null, 2);
   if(active === 'about') txt = document.getElementById('about-html').value;
   if(active === 'portfolio') txt = JSON.stringify({ categories: JSON.parse(document.getElementById('portfolio-cats').value||'[]'), items: JSON.parse(document.getElementById('portfolio-items').value||'[]') }, null, 2);
   if(active === 'services') txt = document.getElementById('services-html').value;
-  if(active === 'contact') txt = document.getElementById('contact-html').value;
-  navigator.clipboard.writeText(txt).then(()=> alert('Copiado al portapapeles'))
-});
+    if(active === 'contact') txt = document.getElementById('contact-html').value;
+    navigator.clipboard.writeText(txt).then(()=> alert('Copiado al portapapeles'))
+  });
+}
 
-editorRefresh.addEventListener('click', async () => {
-  await init();
-  alert('Vista actualizada');
-});
+if(editorRefresh){
+  editorRefresh.addEventListener('click', async () => {
+    await init();
+    alert('Vista actualizada');
+  });
+}

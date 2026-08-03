@@ -1,7 +1,13 @@
 [
-  {
-    "titulo": "Retoque de retrato",
-    "src_antes": "images/ediciones/AMI-ANTES.jpg",
-    "src_despues": "images/ediciones/AMI-DESPUES.jpg"
+  {"titulo": "McLaren 720S - Color, Encuadre, Edicion fina",
+    "descripcion": "Arrastra el control para revelar el antes y el después de la edición.",
+    "src_antes": "images/ediciones/mclaren-antes.jpg",
+    "src_despues": "images/ediciones/mclaren-despues.jpg"
+  }
+{
+    "titulo": "Ford Mustang clásico - Color, Retoques finos.",
+    "descripcion": "Muestra cómo la corrección de color y la textura mejoran cada detalle.",
+    "src_antes": "images/ediciones/mustang-antes.jpg",
+    "src_despues": "images/ediciones/mustang-despues.jpg"
   }
 ]

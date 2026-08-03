@@ -1,39 +1,75 @@
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$jsonPath = Join-Path $scriptRoot 'sections\portfolio.json'
-$imagesRoot = Join-Path $scriptRoot 'images'
+$projectRoot = Split-Path -Parent $scriptRoot
+$jsonPath = Join-Path $projectRoot 'sections/portfolio.json'
+$imagesRoot = Join-Path $projectRoot 'images'
 
-if (-not (Test-Path $jsonPath)) {
+if (-not (Test-Path $jsonPath -PathType Leaf)) {
     Write-Error "No se encontró el archivo: $jsonPath"
     exit 1
 }
 
-if (-not (Test-Path $imagesRoot)) {
+if (-not (Test-Path $imagesRoot -PathType Container)) {
     Write-Error "No se encontró la carpeta de imágenes: $imagesRoot"
     exit 1
 }
 
 $imageExtensions = @('.jpg', '.jpeg', '.png', '.svg', '.gif', '.webp', '.bmp', '.tiff')
-$excludedFolders = @('edicion', 'ediciones')
+$excludedFolderNames = @('ediciones', 'ediciones-fotograficas')
+$categoryMap = @{
+    'deportes' = 'deportes'
+    'fotografia-inmobiliaria' = 'inmobiliaria'
+    'produccto-comercial' = 'comercial'
+    'producto-comercial' = 'comercial'
+    'sesiones-personalizadas' = 'sesiones'
+    'sesiones' = 'sesiones'
+}
 
-$items = Get-ChildItem -Path $imagesRoot -Directory | Where-Object {
-    $excludedFolders -notcontains $_.Name.ToLower()
-} | ForEach-Object {
-    $category = $_.Name
-    Get-ChildItem -Path $_.FullName -File -Recurse | Where-Object {
-        $imageExtensions -contains $_.Extension.ToLower()
-    } | ForEach-Object {
-        $relativePath = $_.FullName.Substring($imagesRoot.Length + 1).TrimStart('\', '/')
-        [PSCustomObject]@{
-            src = 'images/' + ($relativePath -replace '\\','/')
-            alt = [IO.Path]::GetFileNameWithoutExtension($_.Name)
+function Convert-ToWebPath {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Path,
+
+        [Parameter(Mandatory = $true)]
+        [string]$BasePath
+    )
+
+    $fullBasePath = [System.IO.Path]::GetFullPath($BasePath)
+    $fullPath = [System.IO.Path]::GetFullPath($Path)
+
+    $baseUri = [System.Uri]($fullBasePath.TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar)
+    $fileUri = [System.Uri]$fullPath
+    $relativeUri = $baseUri.MakeRelativeUri($fileUri)
+    $relativePath = [System.Uri]::UnescapeDataString($relativeUri.ToString())
+
+    return 'images/' + ($relativePath -replace '\\', '/')
+}
+
+$portfolio = Get-Content -Raw -Path $jsonPath | ConvertFrom-Json
+$items = @()
+
+$subfolders = Get-ChildItem -Path $imagesRoot -Directory | Where-Object {
+    $folderName = $_.Name.ToLowerInvariant()
+    -not ($excludedFolderNames -contains $folderName)
+}
+
+foreach ($folder in $subfolders) {
+    $folderKey = $folder.Name.ToLowerInvariant()
+    $category = if ($categoryMap.ContainsKey($folderKey)) { $categoryMap[$folderKey] } else { $folderKey }
+
+    $files = Get-ChildItem -Path $folder.FullName -File -Recurse | Where-Object {
+        $imageExtensions -contains $_.Extension.ToLowerInvariant()
+    }
+
+    foreach ($file in $files) {
+        $items += [PSCustomObject]@{
+            src = Convert-ToWebPath -Path $file.FullName -BasePath $imagesRoot
+            alt = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
             category = $category
         }
     }
 }
 
-$portfolio = Get-Content -Raw -Path $jsonPath | ConvertFrom-Json
 $portfolio.items = $items | Sort-Object category, src
-
 $portfolio | ConvertTo-Json -Depth 10 | Set-Content -Path $jsonPath -Encoding UTF8
 
 Write-Host "Se actualizó '$jsonPath' con $($portfolio.items.Count) elementos de galería."
