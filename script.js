@@ -172,20 +172,32 @@ function renderEdicionesPage(){
     {
       antes: 'antes-01.jpg',
       despues: 'despues-01.jpg',
-      titulo: 'McLaren 720S - Color, Encuadre, Edicion fina',
-      descripcion: 'Arrastra el control para revelar el antes y el después de la edición.'
+      titulo: 'Edición 01 - Corrección tonal y enfoque',
+      descripcion: 'Ajuste de color, contraste y composición para reforzar la presencia visual de la imagen.'
     },
     {
       antes: 'antes-02.jpg',
       despues: 'despues-02.jpg',
-      titulo: 'Ford Mustang clásico - Color, Retoques finos.',
-      descripcion: 'Muestra cómo la corrección de color y la textura mejoran cada detalle.'
+      titulo: 'Edición 02 - Realce de textura y detalle',
+      descripcion: 'Retoques finos para resaltar superficies, luz y profundidad sin perder la naturalidad.'
     },
     {
       antes: 'antes-03.jpg',
       despues: 'despues-03.jpg',
-      titulo: 'McLaren 720S - Color, Encuadre, Edicion fina.',
-      descripcion: 'Diseñado para que cada imagen mantenga proporción y ritmo visual.'
+      titulo: 'Edición 03 - Balance cromático y claridad',
+      descripcion: 'Se trabaja la intensidad tonal y la claridad para lograr una imagen más limpia y impactante.'
+    },
+    {
+      antes: 'antes-04.jpg',
+      despues: 'despues-04.jpg',
+      titulo: 'Edición 04 - Estilo editorial y contraste',
+      descripcion: 'Se favorece el impacto visual con un contraste más controlado y un tratamiento más premium.'
+    },
+    {
+      antes: 'antes-05.jpg',
+      despues: 'despues-05.jpg',
+      titulo: 'Edición 05 - Retoque final para presentación',
+      descripcion: 'Detalle final de color, brillo y limpieza visual para una imagen lista para publicación o portfolio.'
     }
   ];
 
