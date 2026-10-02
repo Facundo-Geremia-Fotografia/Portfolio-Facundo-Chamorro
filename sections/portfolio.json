@@ -39,11 +39,6 @@
                       "category":  "comercial"
                   },
                   {
-                      "src":  "images/Produccto-comercial/006.jpg",
-                      "alt":  "006",
-                      "category":  "comercial"
-                  },
-                  {
                       "src":  "images/Produccto-comercial/007.jpg",
                       "alt":  "007",
                       "category":  "comercial"
@@ -71,11 +66,6 @@
                   {
                       "src":  "images/Produccto-comercial/012.jpg",
                       "alt":  "012",
-                      "category":  "comercial"
-                  },
-                  {
-                      "src":  "images/Produccto-comercial/013.png",
-                      "alt":  "013",
                       "category":  "comercial"
                   },
                   {
@@ -184,6 +174,11 @@
                       "category":  "inmobiliaria"
                   },
                   {
+                      "src":  "images/sesiones-personalizadas/_FCU2556.jpg",
+                      "alt":  "_FCU2556",
+                      "category":  "sesiones"
+                  },
+                  {
                       "src":  "images/sesiones-personalizadas/BOOK-001.jpg",
                       "alt":  "BOOK-001",
                       "category":  "sesiones"
@@ -211,6 +206,41 @@
                   {
                       "src":  "images/sesiones-personalizadas/BOOK-007.jpg",
                       "alt":  "BOOK-007",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_5874-Editar.jpg",
+                      "alt":  "FCU_5874-Editar",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_5894-Editar.jpg",
+                      "alt":  "FCU_5894-Editar",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_5903-Editar.jpg",
+                      "alt":  "FCU_5903-Editar",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_5929-Editar-Editar.jpg",
+                      "alt":  "FCU_5929-Editar-Editar",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_6001.jpg",
+                      "alt":  "FCU_6001",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_6078.jpg",
+                      "alt":  "FCU_6078",
+                      "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/sesiones-personalizadas/FCU_6088-2.jpg",
+                      "alt":  "FCU_6088-2",
                       "category":  "sesiones"
                   }
               ]
