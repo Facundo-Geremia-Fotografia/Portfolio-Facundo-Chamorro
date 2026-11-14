@@ -593,6 +593,17 @@ nav a:hover{
   min-width:220px;
 }
 
+.contact-qr-content{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.contact-qr-content a{
+  max-width:220px;
+}
+
 .qr-image{
   width:min(150px, 100%);
   height:auto;
