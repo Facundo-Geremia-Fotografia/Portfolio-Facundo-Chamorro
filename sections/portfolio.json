@@ -15,6 +15,10 @@
                        {
                            "slug":  "sesiones",
                            "label":  "Sesiones Personalizadas"
+                       },
+                       {
+                           "slug":  "eventos",
+                           "label":  "Eventos"
                        }
                    ],
     "items":  [
@@ -282,6 +286,66 @@
                       "src":  "images/sesiones-personalizadas/Book-014.jpg",
                       "alt":  "Book-014",
                       "category":  "sesiones"
+                  },
+                  {
+                      "src":  "images/Eventos/01.jpg",
+                      "alt":  "Evento 01",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/02.jpg",
+                      "alt":  "Evento 02",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/03.jpg",
+                      "alt":  "Evento 03",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/04.jpg",
+                      "alt":  "Evento 04",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/05.jpg",
+                      "alt":  "Evento 05",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/06.jpg",
+                      "alt":  "Evento 06",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/07.jpg",
+                      "alt":  "Evento 07",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/08.jpg",
+                      "alt":  "Evento 08",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/09.jpg",
+                      "alt":  "Evento 09",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/10.jpg",
+                      "alt":  "Evento 10",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/11.jpg",
+                      "alt":  "Evento 11",
+                      "category":  "eventos"
+                  },
+                  {
+                      "src":  "images/Eventos/12.jpg",
+                      "alt":  "Evento 12",
+                      "category":  "eventos"
                   }
               ]
 }
