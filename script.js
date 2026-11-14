@@ -198,86 +198,50 @@ function renderEdicionesPage(){
       despues: 'despues-05.jpg',
       titulo: 'Edición 05 - Retoque final para presentación',
       descripcion: 'Detalle final de color, brillo y limpieza visual para una imagen lista para publicación o portfolio.'
+    },
+    {
+      antes: 'ANTES-06.jpg',
+      despues: 'ANTES-06.jpg',
+      titulo: 'Edición 06 - Contraste y color en arquitectura',
+      descripcion: 'Ajuste de contraste y tonos para definir las fachadas y equilibrar el cielo.'
+    },
+    {
+      antes: 'ANTES-07.jpg',
+      despues: 'ANTES-07.jpg',
+      titulo: 'Edición 07 - Corrección de exposición y detalle',
+      descripcion: 'Recuperación de detalle y equilibrio de exposición para dar más presencia a la escena urbana.'
+    },
+    {
+      antes: 'ANTES-08.jpg',
+      despues: 'ANTES-08.jpg',
+      titulo: 'Edición 08 - Color y atmósfera urbana',
+      descripcion: 'Realce del color y el contraste para destacar la arquitectura y la atmósfera de la ciudad.'
     }
   ];
 
-  container.innerHTML = trabajos.map(trabajo => {
+  container.innerHTML = '';
+  trabajos.forEach(trabajo => {
     const antesPath = `images/Ediciones-fotograficas/Antes/edicion/${encodeURIComponent(trabajo.antes)}`;
     const despuesPath = `images/Ediciones-fotograficas/Despues/${encodeURIComponent(trabajo.despues)}`;
-
-    return `
-      <article class="photo-editing-card">
-        <h3 class="titulo-edicion">${trabajo.titulo}</h3>
-        <div class="comparison-wrapper" data-comparison-wrapper>
-          <img class="comparison-image before" src="${antesPath}" alt="Antes de ${trabajo.titulo}">
-          <img class="comparison-image after" src="${despuesPath}" alt="Después de ${trabajo.titulo}">
-          <div class="comparison-overlay" data-comparison-overlay></div>
-          <div class="comparison-slider" data-comparison-slider>
-            <div class="slider-handle" data-slider-handle>
-              <span class="slider-icon">⇄</span>
-            </div>
-          </div>
-        </div>
-        <p class="comparison-copy">${trabajo.descripcion}</p>
-      </article>
-    `;
-  }).join('');
+    const images = el('div', {class:'comparison-images'}, [
+      el('div', {class:'comparison-image-card'}, [
+        el('p', {class:'compare-label'}, 'Antes'),
+        el('img', {src: antesPath, alt: `Antes de ${trabajo.titulo}`})
+      ]),
+      el('div', {class:'comparison-image-card'}, [
+        el('p', {class:'compare-label'}, 'Después'),
+        el('img', {src: despuesPath, alt: `Después de ${trabajo.titulo}`})
+      ])
+    ]);
+    const card = el('article', {class:'photo-editing-card'}, [
+      el('h3', {class:'titulo-edicion'}, trabajo.titulo),
+      images,
+      el('p', {class:'comparison-copy'}, trabajo.descripcion)
+    ]);
+    container.appendChild(card);
+  });
 
   observeFadeIns(container);
-}
-
-function initComparisonSlider(){
-  const wrappers = document.querySelectorAll('[data-comparison-wrapper]');
-
-  wrappers.forEach(wrapper => {
-    const afterImage = wrapper.querySelector('.comparison-image.after');
-    const overlay = wrapper.querySelector('[data-comparison-overlay]');
-    const sliderHandle = wrapper.querySelector('[data-slider-handle]');
-    const slider = wrapper.querySelector('[data-comparison-slider]');
-
-    if(!afterImage || !overlay || !sliderHandle || !slider) return;
-
-    let isDragging = false;
-
-    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-    const update = clientX => {
-      const rect = wrapper.getBoundingClientRect();
-      const percent = clamp((clientX - rect.left) / rect.width, 0, 1);
-      const width = `${percent * 100}%`;
-      afterImage.style.width = width;
-      overlay.style.left = width;
-      slider.style.left = width;
-    };
-
-    const startDrag = event => {
-      isDragging = true;
-      event.preventDefault();
-    };
-
-    const stopDrag = () => {
-      isDragging = false;
-    };
-
-    const drag = event => {
-      if (!isDragging) return;
-      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-      update(clientX);
-    };
-
-    sliderHandle.addEventListener('mousedown', startDrag);
-    sliderHandle.addEventListener('touchstart', startDrag, {passive:false});
-    window.addEventListener('mousemove', drag);
-    window.addEventListener('touchmove', drag, {passive:false});
-    window.addEventListener('mouseup', stopDrag);
-    window.addEventListener('touchend', stopDrag);
-
-    wrapper.addEventListener('click', event => {
-      if (event.target === wrapper) update(event.clientX);
-    });
-
-    update(wrapper.getBoundingClientRect().left + wrapper.clientWidth / 2);
-  });
 }
 
 function initFilters(){
@@ -416,7 +380,6 @@ async function init(){
   await Promise.all(sections.map(s => renderSection(s)));
   await renderEdiciones();
   renderEdicionesPage();
-  initComparisonSlider();
   initParallax();
   initLightbox();
   observeFadeIns();

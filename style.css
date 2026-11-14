@@ -15,8 +15,30 @@ html{
 body{
   background:#ffffff;
   color:#111111;
-  font-family:'Montserrat', sans-serif;
+  font-family:'Open Sans', sans-serif;
+  font-weight:400;
   overflow-x:hidden;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.section-tag{
+  font-family:'Montserrat', sans-serif;
+  font-weight:600;
+}
+
+h1,
+h2{
+  font-weight:700;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
 }
 
 img{
@@ -123,6 +145,24 @@ nav a:hover{
   line-height:1.8;
 }
 
+.about-photo-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+.about-image-wrapper{
+  overflow:hidden;
+  border-radius:22px;
+  background:#fafafa;
+}
+
+.about-image-wrapper img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
 .stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -210,17 +250,10 @@ nav a:hover{
 }
 
 .photo-editing-copy h2{
-  font-family:'Playfair Display', serif;
   font-size:3rem;
   margin-bottom:24px;
   line-height:1.05;
   color:#111111;
-}
-
-.photo-editing-copy p,
-.section-tag,
-.comparison-copy{
-  font-family:'Montserrat', sans-serif;
 }
 
 .photo-editing-copy p{
@@ -253,7 +286,6 @@ nav a:hover{
 }
 
 .titulo-edicion{
-  font-family:'Playfair Display', serif;
   font-size:1.5rem;
   margin:0;
   color:#111111;
@@ -349,6 +381,30 @@ nav a:hover{
   font-size:.95rem;
 }
 
+.comparison-images{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.comparison-image-card{
+  min-width:0;
+  overflow:hidden;
+  border:1px solid #ececec;
+  border-radius:16px;
+  background:#fafafa;
+}
+
+.comparison-image-card .compare-label{
+  padding:10px 12px 0;
+}
+
+.comparison-image-card img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
 @media (max-width:1024px){
   .photo-editing-inner{
     grid-template-columns:1fr;
@@ -393,6 +449,9 @@ nav a:hover{
   .photo-editing-grid{
     grid-template-columns:1fr;
     gap:24px;
+  }
+  .comparison-images{
+    grid-template-columns:1fr;
   }
   .photo-editing-copy{
     max-width:100%;

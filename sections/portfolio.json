@@ -114,6 +114,11 @@
                       "category":  "comercial"
                   },
                   {
+                      "src":  "images/Produccto-comercial/023 vivero.1.jpg",
+                      "alt":  "Fotografía comercial de vivero",
+                      "category":  "comercial"
+                  },
+                  {
                       "src":  "images/Produccto-comercial/MAC.jpg",
                       "alt":  "MAC",
                       "category":  "comercial"
@@ -174,6 +179,66 @@
                       "category":  "inmobiliaria"
                   },
                   {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO003.jpg",
+                      "alt":  "Fotografía inmobiliaria 03",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO004.jpg",
+                      "alt":  "Fotografía inmobiliaria 04",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO005.jpg",
+                      "alt":  "Fotografía inmobiliaria 05",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO006.jpg",
+                      "alt":  "Fotografía inmobiliaria 06",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO007.jpg",
+                      "alt":  "Fotografía inmobiliaria 07",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO008.jpg",
+                      "alt":  "Fotografía inmobiliaria 08",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO009.jpg",
+                      "alt":  "Fotografía inmobiliaria 09",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO010.jpg",
+                      "alt":  "Fotografía inmobiliaria 10",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO011.jpg",
+                      "alt":  "Fotografía inmobiliaria 11",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO012.jpg",
+                      "alt":  "Fotografía inmobiliaria 12",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO013.jpg",
+                      "alt":  "Fotografía inmobiliaria 13",
+                      "category":  "inmobiliaria"
+                  },
+                  {
+                      "src":  "images/Fotografia-Inmobiliaria/IMO014.jpg",
+                      "alt":  "Fotografía inmobiliaria 14",
+                      "category":  "inmobiliaria"
+                  },
+                  {
                       "src":  "images/sesiones-personalizadas/BOOK-001.jpg",
                       "alt":  "BOOK-001",
                       "category":  "sesiones"
@@ -201,26 +266,6 @@
                   {
                       "src":  "images/sesiones-personalizadas/BOOK-007.jpg",
                       "alt":  "BOOK-007",
-                      "category":  "sesiones"
-                  },
-                  {
-                      "src":  "images/sesiones-personalizadas/Book-008.jpg",
-                      "alt":  "Book-008",
-                      "category":  "sesiones"
-                  },
-                  {
-                      "src":  "images/sesiones-personalizadas/Book-009.jpg",
-                      "alt":  "Book-009",
-                      "category":  "sesiones"
-                  },
-                  {
-                      "src":  "images/sesiones-personalizadas/Book-010.jpg",
-                      "alt":  "Book-010",
-                      "category":  "sesiones"
-                  },
-                  {
-                      "src":  "images/sesiones-personalizadas/Book-011.jpg",
-                      "alt":  "Book-011",
                       "category":  "sesiones"
                   },
                   {
